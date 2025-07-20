@@ -1,0 +1,131 @@
+/* PlaceOrder.css */
+
+/* --- Main Form Container --- */
+.place-order {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 80px;
+  padding: 0 5%; /* Adds some space on the sides */
+}
+
+/* --- Left Side: Delivery Information --- */
+.place-order-left {
+  width: 100%;
+  max-width: 500px; /* Controls the max width of the form */
+  flex: 1; /* Allows it to grow */
+}
+
+.place-order-left .title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.place-order-left input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  outline-color: tomato; /* Color when the input is focused */
+  font-size: 16px;
+}
+
+.place-order-left .multi-fields {
+  display: flex;
+  gap: 15px;
+}
+
+
+/* --- Right Side: Cart Totals --- */
+.place-order-right {
+  width: 100%;
+  max-width: 420px;
+  flex: 1; /* Allows it to grow */
+}
+
+.cart-total {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f9f9f9; /* A very light grey for the card background */
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.cart-total h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+  text-transform: capitalize;
+}
+
+.cart-total .cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #555;
+}
+
+/* Make the final total text bold and stand out */
+.cart-total .cart-total-details b {
+  font-weight: 600;
+  color: #333;
+}
+
+.cart-total hr {
+  margin: 10px 0;
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.cart-total button {
+  background-color: tomato;
+  color: white;
+  border: none;
+  padding: 14px 0;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* A subtle hover effect for the button */
+.cart-total button:hover {
+  background-color: #ff4723;
+}
+
+/* --- Responsive Design for smaller screens --- */
+@media (max-width: 900px) {
+  .place-order {
+    flex-direction: column; /* Stack left and right sections */
+    align-items: center;
+    gap: 40px;
+  }
+
+  .place-order-left,
+  .place-order-right {
+    max-width: 100%; /* Allow them to take full screen width */
+  }
+  
+  /* Reverse order on mobile so cart total is on top */
+  .place-order {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 480px) {
+    .place-order-left .multi-fields {
+        flex-direction: column; /* Stack first/last name etc. on mobile */
+        gap: 0;
+    }
+}
